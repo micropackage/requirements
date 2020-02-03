@@ -24,7 +24,7 @@ abstract class Checker implements Interfaces\Checkable {
 	/**
 	 * Checks if the requirement is met
 	 *
-	 * @since  [Next]
+	 * @since  1.0.0
 	 * @param  mixed $value Value to check against.
 	 * @return void
 	 */
@@ -33,7 +33,7 @@ abstract class Checker implements Interfaces\Checkable {
 	/**
 	 * Gets checker name
 	 *
-	 * @since  [Next]
+	 * @since  1.0.0
 	 * @return string
 	 */
 	public function get_name() {
@@ -43,7 +43,7 @@ abstract class Checker implements Interfaces\Checkable {
 	/**
 	 * Adds error message
 	 *
-	 * @since  [Next]
+	 * @since  1.0.0
 	 * @param  string $message Error message.
 	 * @return $this
 	 */
@@ -55,7 +55,7 @@ abstract class Checker implements Interfaces\Checkable {
 	/**
 	 * Gets all errors
 	 *
-	 * @since  [Next]
+	 * @since  1.0.0
 	 * @return array
 	 */
 	public function get_errors() {

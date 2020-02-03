@@ -25,7 +25,7 @@ class PHPExtensions extends Abstracts\Checker {
 	/**
 	 * Checks if the requirement is met
 	 *
-	 * @since  [Next]
+	 * @since  1.0.0
 	 * @throws \Exception When provided value is not an array.
 	 * @param  array $value Array of extensions.
 	 * @return void

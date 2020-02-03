@@ -15,7 +15,7 @@ interface Checkable {
 	/**
 	 * Gets checker name
 	 *
-	 * @since  [Next]
+	 * @since  1.0.0
 	 * @return string
 	 */
 	public function get_name();
@@ -23,7 +23,7 @@ interface Checkable {
 	/**
 	 * Checks if the requirement is met
 	 *
-	 * @since  [Next]
+	 * @since  1.0.0
 	 * @param  mixed $value Value to check against.
 	 * @return void
 	 */

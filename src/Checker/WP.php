@@ -25,7 +25,7 @@ class WP extends Abstracts\Checker {
 	/**
 	 * Checks if the requirement is met
 	 *
-	 * @since  [Next]
+	 * @since  1.0.0
 	 * @throws \Exception When provided value is not a string or numeric.
 	 * @param  mixed $value Value to check against.
 	 * @return void

@@ -25,7 +25,7 @@ class Plugins extends Abstracts\Checker {
 	/**
 	 * Checks if the requirement is met
 	 *
-	 * @since  [Next]
+	 * @since  1.0.0
 	 * @throws \Exception When provided value is not an array of arrays with keys: file*, name*, version.
 	 * @param  mixed $value Value to check against.
 	 * @return void

@@ -59,7 +59,7 @@ class Requirements {
 	/**
 	 * Requirements constructor
 	 *
-	 * @since [Next]
+	 * @since 1.0.0
 	 * @param string $plugin_name       Plugin display name.
 	 * @param array  $requirements      Array with requirements.
 	 * @param bool   $autoload_checkers If default checkers should be autoloaded.
@@ -86,7 +86,7 @@ class Requirements {
 	/**
 	 * Loads default checkers
 	 *
-	 * @since  [Next]
+	 * @since  1.0.0
 	 * @return void
 	 */
 	public function load_default_checkers() {
@@ -101,7 +101,7 @@ class Requirements {
 	/**
 	 * Adds the requirement to collection
 	 *
-	 * @since  [Next]
+	 * @since  1.0.0
 	 * @throws \Exception When requirement with given slug already added.
 	 * @param  string $requirement_slug Check slug.
 	 * @param  mixed  $checked_value    Value to check.
@@ -122,7 +122,7 @@ class Requirements {
 	/**
 	 * Gets all the requirements
 	 *
-	 * @since  [Next]
+	 * @since  1.0.0
 	 * @return array
 	 */
 	public function get() {
@@ -132,7 +132,7 @@ class Requirements {
 	/**
 	 * Registers checker
 	 *
-	 * @since  [Next]
+	 * @since  1.0.0
 	 * @throws \Exception When checker doesn't implement given interface.
 	 * @throws \Exception When checker with given name already registered.
 	 * @param  mixed $checker Checker class instance or \
@@ -165,7 +165,7 @@ class Requirements {
 	/**
 	 * Checks if the checker has been registered
 	 *
-	 * @since  [Next]
+	 * @since  1.0.0
 	 * @param  string $name Checker name.
 	 * @return bool
 	 */
@@ -176,7 +176,7 @@ class Requirements {
 	/**
 	 * Gets checker instance
 	 *
-	 * @since  [Next]
+	 * @since  1.0.0
 	 * @param  string $name Checker name.
 	 * @return false|Checkable
 	 */
@@ -193,7 +193,7 @@ class Requirements {
 	/**
 	 * Checks the requirements
 	 *
-	 * @since  [Next]
+	 * @since  1.0.0
 	 * @return void
 	 */
 	public function check() {
@@ -215,7 +215,7 @@ class Requirements {
 	/**
 	 * Determines if all the requirements has been satisfied
 	 *
-	 * @since  [Next]
+	 * @since  1.0.0
 	 * @return bool
 	 */
 	public function satisfied() {
@@ -231,7 +231,7 @@ class Requirements {
 	/**
 	 * Prints notice
 	 *
-	 * @since  [Next]
+	 * @since  1.0.0
 	 * @return void
 	 */
 	public function print_notice() {

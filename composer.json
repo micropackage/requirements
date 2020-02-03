@@ -1,0 +1,38 @@
+{
+	"name": "micropackage/requirements",
+	"description": "Requirements checker for WordPress plugins",
+	"license": "GPL-3.0-or-later",
+	"authors": [
+		{
+			"name": "Jakub Mikita",
+			"email": "jakub@bracketspace.com"
+		}
+	],
+	"scripts": {
+		"phpcs": "phpcs",
+		"phpcbf": "phpcbf",
+		"phpunit": "phpunit",
+		"phpunit-coverage": "phpunit --coverage-text"
+	},
+	"require": {
+		"php": ">=5.6",
+		"micropackage/internationalization": "^1.0"
+	},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+		"phpcompatibility/php-compatibility": "^9.1",
+		"wp-coding-standards/wpcs": "^2.0",
+		"phpunit/phpunit": "^6.5.5",
+		"php-mock/php-mock-phpunit": "^2.5"
+	},
+	"autoload": {
+		"psr-4" : {
+			"Micropackage\\Requirements\\" : "src"
+		}
+	},
+	"autoload-dev": {
+		"psr-4" : {
+			"Micropackage\\Requirements\\Test\\" : "tests"
+		}
+	}
+}

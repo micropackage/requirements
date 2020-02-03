@@ -1,0 +1,20 @@
+{
+	"name": "micropackage-requirements",
+	"description": "Requirements checker for WordPress plugins",
+	"scripts": {
+		"makepot": "wp-pot --src '**/*.php' --dest-file 'languages/micropackage-requirements.pot' --package 'micropackage-requirements'"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/micropackage/requirements.git"
+	},
+	"author": "BracketSpace",
+	"license": "GPL-3.0-or-later",
+	"bugs": {
+		"url": "https://github.com/micropackage/requirements/issues"
+	},
+	"homepage": "https://github.com/micropackage/requirements/#readme",
+	"devDependencies": {
+		"wp-pot-cli": "^1.3"
+	}
+}

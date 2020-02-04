@@ -93,7 +93,12 @@ class Requirements {
 		array_map(
 			[ $this, 'register_checker' ],
 			[
+				'Micropackage\Requirements\Checker\DocHooks',
 				'Micropackage\Requirements\Checker\PHP',
+				'Micropackage\Requirements\Checker\PHPExtensions',
+				'Micropackage\Requirements\Checker\Plugins',
+				'Micropackage\Requirements\Checker\Theme',
+				'Micropackage\Requirements\Checker\WP',
 			]
 		);
 	}

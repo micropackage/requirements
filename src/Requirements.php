@@ -8,6 +8,8 @@
 namespace Micropackage\Requirements;
 
 use Micropackage\Internationalization\Internationalization;
+use Micropackage\Requirements\Interfaces\Checkable;
+use Micropackage\Requirements\Checker;
 
 /**
  * Requirements class
@@ -93,12 +95,12 @@ class Requirements {
 		array_map(
 			[ $this, 'register_checker' ],
 			[
-				'Micropackage\Requirements\Checker\DocHooks',
-				'Micropackage\Requirements\Checker\PHP',
-				'Micropackage\Requirements\Checker\PHPExtensions',
-				'Micropackage\Requirements\Checker\Plugins',
-				'Micropackage\Requirements\Checker\Theme',
-				'Micropackage\Requirements\Checker\WP',
+				Checker\DocHooks::class,
+				Checker\PHP::class,
+				Checker\PHPExtensions::class,
+				Checker\Plugins::class,
+				Checker\Theme::class,
+				Checker\WP::class,
 			]
 		);
 	}
@@ -147,7 +149,7 @@ class Requirements {
 	public function register_checker( $checker ) {
 
 		$implements = class_implements( $checker );
-		$interface  = 'Micropackage\Requirements\Interfaces\Checkable';
+		$interface  = Checkable::class;
 
 		if ( ! isset( $implements[ $interface ] ) ) {
 			throw new \Exception( sprintf( 'Checker must implement %s interface', $interface ) );

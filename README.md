@@ -6,6 +6,10 @@
 [![Total Downloads](https://poser.pugx.org/micropackage/requirements/downloads)](https://packagist.org/packages/micropackage/requirements)
 [![License](https://poser.pugx.org/micropackage/requirements/license)](https://packagist.org/packages/micropackage/requirements)
 
+<p align="center">
+    <img src="https://bracketspace.com/extras/micropackage/micropackage-small.png" alt="Micropackage logo"/>
+</p>
+
 ## 🧬 About Requirements
 
 This micropackage allows you to test environment requirements to run your plugin.

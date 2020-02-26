@@ -109,7 +109,7 @@ $requirements = new \Micropackage\Requirements\Requirements( 'My Test Plugin', a
 	'custom-check' => 'something else',
 ) );
 
-$requirements->add_checker( 'CustomCheck' );
+$requirements->register_checker( 'CustomCheck' );
 
 $is_good = $requirements->satisfied();
 ```

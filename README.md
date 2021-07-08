@@ -6,6 +6,10 @@
 [![Total Downloads](https://poser.pugx.org/micropackage/requirements/downloads)](https://packagist.org/packages/micropackage/requirements)
 [![License](https://poser.pugx.org/micropackage/requirements/license)](https://packagist.org/packages/micropackage/requirements)
 
+<p align="center">
+    <img src="https://bracketspace.com/extras/micropackage/micropackage-small.png" alt="Micropackage logo"/>
+</p>
+
 ## 🧬 About Requirements
 
 This micropackage allows you to test environment requirements to run your plugin.
@@ -14,6 +18,7 @@ It can test:
 
 - PHP version
 - PHP Extensions
+- SSL state
 - WordPress version
 - Active plugins
 - Current theme
@@ -48,6 +53,7 @@ $requirements = new \Micropackage\Requirements\Requirements( 'My Test Plugin', a
 	'php_extensions'     => array( 'soap' ),
 	'wp'                 => '5.3',
 	'dochooks'           => true,
+	'ssl'                => true,
 	'plugins'            => array(
 		array( 'file' => 'akismet/akismet.php', 'name' => 'Akismet', 'version' => '3.0' ),
 		array( 'file' => 'hello-dolly/hello.php', 'name' => 'Hello Dolly', 'version' => '1.5' )
@@ -105,7 +111,7 @@ $requirements = new \Micropackage\Requirements\Requirements( 'My Test Plugin', a
 	'custom-check' => 'something else',
 ) );
 
-$requirements->add_checker( 'CustomCheck' );
+$requirements->register_checker( 'CustomCheck' );
 
 $is_good = $requirements->satisfied();
 ```

@@ -99,6 +99,7 @@ class Requirements {
 				Checker\PHP::class,
 				Checker\PHPExtensions::class,
 				Checker\Plugins::class,
+				Checker\SSL::class,
 				Checker\Theme::class,
 				Checker\WP::class,
 			]
@@ -256,7 +257,7 @@ class Requirements {
 
 				echo '<ul style="list-style: disc; padding-left: 20px;">';
 					foreach ( $this->errors as $error ) {
-						echo '<li>' . $error . '</li>';
+				echo '<li>' . $error . '</li>';
 					}
 				echo '</ul>';
 

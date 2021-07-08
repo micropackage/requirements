@@ -15,6 +15,13 @@ use Micropackage\Requirements\Interfaces;
 abstract class Checker implements Interfaces\Checkable {
 
 	/**
+	 * Checker name
+	 *
+	 * @var string
+	 */
+	protected $name = '';
+
+	/**
 	 * Error messages
 	 *
 	 * @var array

@@ -25,7 +25,7 @@ class SSL extends Abstracts\Checker {
 	/**
 	 * Checks if the requirement is met
 	 *
-	 * @since  1.0.0
+	 * @since  1.1.0
 	 * @throws \Exception When provided value is not a string or numeric.
 	 * @param  string $enabled If SSL should be enabled or disabled.
 	 * @return void

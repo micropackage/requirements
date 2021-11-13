@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [Next]
+
+### Changed
+- Notice has been moved to a separate template file.
+- Notice content is now escaped.
+
 ## 1.1.0
 
 ### Added

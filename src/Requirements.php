@@ -68,7 +68,6 @@ class Requirements {
 	 *                                  Default: true.
 	 */
 	public function __construct( $plugin_name, $requirements = [], $autoload_checkers = true ) {
-
 		$this->plugin_name = $plugin_name;
 
 		// Add requirements.
@@ -82,7 +81,6 @@ class Requirements {
 		// Load translation.
 		$i18n = new Internationalization( 'micropackage-requirements', dirname( __DIR__ ) . '/languages' );
 		$i18n->load_translation();
-
 	}
 
 	/**
@@ -116,7 +114,6 @@ class Requirements {
 	 * @return $this
 	 */
 	public function add( $requirement_slug, $checked_value ) {
-
 		if ( isset( $this->requirements[ $requirement_slug ] ) ) {
 			throw new \Exception( sprintf( 'Requirement %s already exists', $requirement_slug ) );
 		}
@@ -124,7 +121,6 @@ class Requirements {
 		$this->requirements[ $requirement_slug ] = $checked_value;
 
 		return $this;
-
 	}
 
 	/**
@@ -148,7 +144,6 @@ class Requirements {
 	 * @return $this
 	 */
 	public function register_checker( $checker ) {
-
 		$implements = class_implements( $checker );
 		$interface  = Checkable::class;
 
@@ -167,7 +162,6 @@ class Requirements {
 		$this->checkers[ $checker->get_name() ] = $checker;
 
 		return $this;
-
 	}
 
 	/**
@@ -189,13 +183,11 @@ class Requirements {
 	 * @return false|Checkable
 	 */
 	public function get_checker( $name ) {
-
 		if ( ! $this->has_checker( $name ) ) {
 			return false;
 		}
 
 		return $this->checkers[ $name ];
-
 	}
 
 	/**
@@ -205,7 +197,6 @@ class Requirements {
 	 * @return void
 	 */
 	public function check() {
-
 		// Reset state.
 		$this->errors = [];
 
@@ -217,7 +208,6 @@ class Requirements {
 		}
 
 		$this->did_check = true;
-
 	}
 
 	/**
@@ -227,13 +217,11 @@ class Requirements {
 	 * @return bool
 	 */
 	public function satisfied() {
-
 		if ( ! $this->did_check ) {
 			$this->check();
 		}
 
 		return empty( $this->errors );
-
 	}
 
 	/**
@@ -243,28 +231,13 @@ class Requirements {
 	 * @return void
 	 */
 	public function print_notice() {
-
 		if ( $this->satisfied() ) {
 			return;
 		}
 
 		add_action( 'admin_notices', function() {
-			// phpcs:disable
-			echo '<div class="error">';
-
-				// Translators - plugin name.
-				echo '<p>' . sprintf( __( 'The plugin: <strong>%s</strong> cannot be activated.', Requirements::$textdomain ), esc_html( $this->plugin_name ) ) . '</p>';
-
-				echo '<ul style="list-style: disc; padding-left: 20px;">';
-					foreach ( $this->errors as $error ) {
-				echo '<li>' . $error . '</li>';
-					}
-				echo '</ul>';
-
-			echo '</div>';
-			// phpcs:enable
+			include __DIR__ . '/notice.php';
 		} );
-
 	}
 
 }

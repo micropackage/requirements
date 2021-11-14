@@ -5,6 +5,8 @@
  * @package micropackage/requirements
  */
 
+use BracketSpace\Notification\Dependencies\Micropackage\Requirements\Requirements;
+
 ?>
 <div class="error">
 	<p>

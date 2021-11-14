@@ -236,7 +236,7 @@ class Requirements {
 		}
 
 		add_action( 'admin_notices', function() {
-			include __DIR__ . 'notice.php';
+			include __DIR__ . '/notice.php';
 		} );
 	}
 

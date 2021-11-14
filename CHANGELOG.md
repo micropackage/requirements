@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [Next]
+## 1.1.1
 
 ### Changed
 - Notice has been moved to a separate template file.

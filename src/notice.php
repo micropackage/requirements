@@ -5,8 +5,6 @@
  * @package micropackage/requirements
  */
 
-use Micropackage\Requirements\Requirements;
-
 ?>
 <div class="error">
 	<p><?php echo wp_kses_post( $message ); ?></p>

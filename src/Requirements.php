@@ -227,7 +227,7 @@ class Requirements {
 	/**
 	 * Returns message with requirements info if any of them is not met.
 	 *
-	 * @since [next]
+	 * @since 1.2.0
 	 * @param string|null $message Message to display.
 	 * @return string|null Message or null if requirements are met.
 	 */
@@ -270,7 +270,7 @@ class Requirements {
 	 * Runs wp_die with proper message if any of the checks failed.
 	 * This method shoudl be used interchangeably with `print_notice`.
 	 *
-	 * @since [next]
+	 * @since 1.2.0
 	 * @param string|null $message Message to display.
 	 * @return void
 	 */

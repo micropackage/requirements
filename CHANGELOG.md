@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.2.0
+
+### Added
+- `kill` method allowing to display the requirement message as a content of `wp_die`.
+
 ## 1.1.3
 
 ### Fixed

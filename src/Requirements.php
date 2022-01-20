@@ -225,6 +225,29 @@ class Requirements {
 	}
 
 	/**
+	 * Returns message with requirements info if any of them is not met.
+	 *
+	 * @since 1.2.0
+	 * @param string|null $message Message to display.
+	 * @return string|null Message or null if requirements are met.
+	 */
+	protected function get_message( $message = null ) {
+		if ( $this->satisfied() ) {
+			return null;
+		}
+
+		if ( ! is_string( $message ) || '' === $message ) {
+			return sprintf(
+				// Translators: Plugin name.
+				__( 'The plugin: <strong>%s</strong> cannot be activated.', self::$textdomain ),
+				esc_html( $this->plugin_name )
+			);
+		}
+
+		return $message;
+	}
+
+	/**
 	 * Prints notice
 	 *
 	 * @since  1.0.0
@@ -232,21 +255,38 @@ class Requirements {
 	 * @return void
 	 */
 	public function print_notice( $message = null ) {
-		if ( $this->satisfied() ) {
-			return;
-		}
+		$message = $this->get_message( $message );
 
 		if ( null === $message ) {
-			$message = sprintf(
-				// Translators: Plugin name.
-				__( 'The plugin: <strong>%s</strong> cannot be activated.', self::$textdomain ),
-				esc_html( $this->plugin_name )
-			);
+			return;
 		}
 
 		add_action( 'admin_notices', function() use ( $message ) {
 			include __DIR__ . '/notice.php';
 		} );
+	}
+
+	/**
+	 * Runs wp_die with proper message if any of the checks failed.
+	 * This method shoudl be used interchangeably with `print_notice`.
+	 *
+	 * @since 1.2.0
+	 * @param string|null $message Message to display.
+	 * @return void
+	 */
+	public function kill( $message = null ) {
+		$message = $this->get_message( $message );
+
+		if ( null === $message ) {
+			return;
+		}
+
+		ob_start();
+
+		include __DIR__ . '/die-message.php';
+
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		wp_die( ob_get_clean(), wp_strip_all_tags( $message ) );
 	}
 
 }

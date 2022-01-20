@@ -42,7 +42,7 @@ class DocHooks extends Abstracts\Checker {
 		$has_comment = false !== strpos( $reflector->getMethod( 'check' )->getDocComment(), '@dochooks-test' );
 
 		if ( ! $has_comment && $enabled ) {
-			$this->add_error( __( 'Support for DocHooks is required', Requirements::$textdomain ) );
+			$this->add_error( __( 'Support for DocHooks is required. You need to disable OPCache comment stripping.', Requirements::$textdomain ) );
 		}
 
 		if ( $has_comment && ! $enabled ) {

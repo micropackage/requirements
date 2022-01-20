@@ -228,14 +228,23 @@ class Requirements {
 	 * Prints notice
 	 *
 	 * @since  1.0.0
+	 * @param string|null $message Message to display.
 	 * @return void
 	 */
-	public function print_notice() {
+	public function print_notice( $message = null ) {
 		if ( $this->satisfied() ) {
 			return;
 		}
 
-		add_action( 'admin_notices', function() {
+		if ( null === $message ) {
+			$message = sprintf(
+				// Translators: Plugin name.
+				__( 'The plugin: <strong>%s</strong> cannot be activated.', self::$textdomain ),
+				esc_html( $this->plugin_name )
+			);
+		}
+
+		add_action( 'admin_notices', function() use ( $message ) {
 			include __DIR__ . '/notice.php';
 		} );
 	}

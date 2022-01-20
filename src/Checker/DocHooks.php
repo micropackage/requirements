@@ -25,6 +25,8 @@ class DocHooks extends Abstracts\Checker {
 	/**
 	 * Checks if the requirement is met
 	 *
+	 * @dochooks-test
+	 *
 	 * @since  1.0.0
 	 * @throws \Exception When provided value is not a string or numeric.
 	 * @param  mixed $enabled If dochooks should be enabled or disabled.
@@ -40,7 +42,7 @@ class DocHooks extends Abstracts\Checker {
 		$has_comment = false !== strpos( $reflector->getMethod( 'check' )->getDocComment(), '@dochooks-test' );
 
 		if ( ! $has_comment && $enabled ) {
-			$this->add_error( __( 'Support for DocHooks is required', Requirements::$textdomain ) );
+			$this->add_error( __( 'Support for DocHooks is required. You need to disable OPCache comment stripping.', Requirements::$textdomain ) );
 		}
 
 		if ( $has_comment && ! $enabled ) {

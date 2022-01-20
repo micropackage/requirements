@@ -1,6 +1,17 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 1.1.3
+
+### Fixed
+- DocHooks check.
+
+### Changed
+- DocHooks check message with better explanation what to do.
+
+### Added
+- Ablity to customize the error message.
+
 ## 1.1.2
 
 ### Fixed

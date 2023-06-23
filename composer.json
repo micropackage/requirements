@@ -34,5 +34,10 @@
 		"psr-4" : {
 			"Micropackage\\Requirements\\Test\\" : "tests"
 		}
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
 	}
 }

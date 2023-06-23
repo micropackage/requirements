@@ -130,4 +130,4 @@ Micropackages are maintained by [BracketSpace](https://bracketspace.com).
 
 ## 📃 License
 
-GNU General Public License (GPL) v3.0. See the [LICENSE](./LICENSE) file for more information.
+This software is released under MIT license. See the [LICENSE](./LICENSE) file for more information.
